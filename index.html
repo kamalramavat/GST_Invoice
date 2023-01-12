@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../new/js/jquery.js"></script>
+    <script src="../new/js/gst_invoice.js"></script>
+    
+</head>
+
+<body>
+    INVOICE GENARATOR
+
+            <form method="post" action="data.html">
+                <table id="items" class="table table-responsive">
+                    <tr class="fields text-white">
+                        <th>Item</th>
+                        <th>HSN/SAC</th>
+                        <th>GST</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                        <th>CGST</th>
+                        <th>SGST</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+
+                    <tr class="item-row">
+                        <td><input class="item" id="item" placeholder="Item" ></td>
+                        <td><input class="hsnsac" id="hsnsac" placeholder="5560" ></td>
+                        <td><input class="gst" id="gst" placeholder="0%" ></td>
+                        <td><input class="qty" id="qty" placeholder="0" ></td>
+                        <td><input class="rate" id="rate" placeholder="0"></td>
+                        <td><span class="amount" id="amount">0</span></td>
+                        <td><span class="cgst" id="cgst">0</span></td>
+                        <td><span class="sgst" id="sgst">0</span></td>
+                        <td><span class="total" id="total">0</span></td>
+                        
+                    </tr>
+
+                    <tr id="hiderow">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="10" class="text-center"><a id="addrow" href="javascript:;" title="Add a row">Add New Data</a></td>
+                    </tr>
+                    <tr class="summary">
+                        
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>AMOUNT</strong></td>
+                        <td><span class="amt" id="amt">0</span></td>
+                        <td></td>
+                    </tr>
+                    <tr class="summary">
+                        
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>CGST</strong></td>
+                        <td><span class="cg" id="cg">0</span></td>
+                        <td></td>
+                    </tr>
+                    <tr class="summary">
+                       
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>SGST</strong></td>
+                        <td><span class="sg" id="sg">0</span></td>
+                        <td></td>
+                    </tr>
+                    <tr class="summary">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>SUB TOTAL</strong></td>
+                        <td><span class="subtotal" id="subtotal">0</span></td>
+                        <td></td>
+                    </tr>
+                    <tr class="summary">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>DISCOUNT</strong></td>
+                        <td><input class="discount" id="discount" value="" placeholder="0%" ></td>
+                        <td></td>
+                    </tr>
+                    <tr class="summary">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>REDUCTION</strong></td>
+                        <td><input class="reduction" id="reduction" value="" placeholder="0%" ></td>
+                        <td></td>
+                    </tr>
+                    <tr class="summary">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>EXTRA CHARGES</strong></td>
+                        <td><input class="echarge" id="echarge" value="" placeholder="0%" ></td>
+                        <td></td>
+                    </tr>
+
+                    <tr class="summary">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>TOTAL</strong></td>
+                        <td><span class="grandtotal" id="grandtotal">0</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="10" class="text-center"><input type="submit" class="btn btn-success" id="save"
+                                value="Save"></td>
+                    </tr>
+                </table>
+            </form>
+
+</body>
+
+</html>

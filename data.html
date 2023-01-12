@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+        <script src="../new/js/jquery.js"></script>
+    <script src="../new/js/gst_invoice.js"></script>
+</head>
+
+<body>
+                                 <table id="myTable">
+                                    <thead>
+                                        <tr>
+                                            <th >Item</th>
+                                            <th>HSN/SAC</th>
+                                            <th>GST(%)</th>
+                                            <th>Quantity</th>
+                                            <th>Rate</th>
+                                            <th>Amount</th>
+                                            <th>CGST</th>
+                                            <th>SGST</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tbody">
+                                                                           </tbody>
+                                </table>
+                           
+                                <table id="mytbl">
+                                    <tbody>
+                                        <tr>
+                                            <td>Amount</td>
+                                            <td class="amt"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CGST</td>
+                                            <td class=" cg"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>SGST</td>
+                                            <td class=" sg"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Subtoal
+                                            </td>
+                                            <td class="subtotal"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Discount
+                                            </td>
+                                            <td class=" discount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Reduction</td>
+                                            <td class=" reduction"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Extra Charges</td>
+                                            <td class="echarge"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Grand Total </td>
+                                            <td class="text-right grandtotal"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            
+                   
+                
+    <script>
+            const data = JSON.parse(localStorage.getItem('listItem'));
+            const table = document.querySelector('#myTable');
+
+           
+            $('.amt').text(function(i, text) {
+                return data["amt"] ?? "";
+            });
+            $('.cg').text(function(i, text) {
+                return data["cg"] ?? "";
+            });
+            $('.sg').text(function(i, text) {
+                return data["sg"] ?? "";
+            });
+            $('.subtotal').text(function(i, text) {
+                return data["subtotal"] ?? "";
+            });
+            $('.discount').text(function(i, text) {
+                return data["discount"] ?? "";
+            });
+            $('.reduction').text(function(i, text) {
+                return data["reduction"] ?? "";
+            });
+            $('.echarge').text(function(i, text) {
+                return data["echarge"] ?? "";
+            });
+            $('.grandtotal').text(function(i, text) {
+                return data["grandtotal"] ?? "";
+            });
+        $.each( data["data"], function( key, value ) {
+            // debugger;
+            let tr = document.createElement('TR');
+            let td_item = document.createElement('TD');
+            let td_hsnsac = document.createElement('TD');
+            let td_gst = document.createElement('TD');
+            let td_qty = document.createElement('TD');
+            let td_rate = document.createElement('TD');
+            let td_amount = document.createElement('TD');
+            let td_cgst = document.createElement('TD');
+            let td_sgst= document.createElement('TD');
+            let td_total = document.createElement('TD');
+            
+            td_item.innerHTML = value.item
+            td_hsnsac.innerHTML = value.hsnsac
+            td_gst.innerHTML = value.gst
+            td_qty.innerHTML = value.qty
+            td_rate.innerHTML = value.rate
+            td_amount.innerHTML = value.amount
+            td_cgst.innerHTML = value.cgst
+            td_sgst.innerHTML = value.sgst
+            td_total.innerHTML = value.total
+           
+            tr.append(td_item)
+            tr.append(td_hsnsac)
+            tr.append(td_gst)
+            tr.append(td_qty)
+            tr.append(td_rate)
+            tr.append(td_amount)
+            tr.append(td_cgst)
+            tr.append(td_sgst)
+            tr.append(td_total)
+           
+            table.append(tr)
+          
+
+        });
+    </script>
+</body>
+
+</html>
